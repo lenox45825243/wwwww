@@ -3,30 +3,29 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Blank page
-                <small>it all starts here</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Examples</a></li>
-                <li class="active">Blank page</li>
-            </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-
             <!-- Default box -->
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Листинг сущности</h3>
+                    <h3 class="box-title">Список комментариев</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <div class="form-group col-md-2">
+                        <div class="input-group">
+                            <form method="get">
+                                <input value="{{old('search')}}" type="search" class="form-control" placeholder="Поиск по тексту" name="search">
+                                <button type="submit" class="btn btn-success">Поиск</button>
+                                <button type="reset" class="btn btn-default">Сбросить</button>
+                            </form>
+                            <span class="input-group-btn"></span>
+                        </div>
+                    </div>
+                    @if(!count($comments))
+                        <div class="col-md-8">
+                            <h5 class="text-center">Данных по запросу не найдено</h5>
+                        </div>
+                    @else
+                    <table id="example2" class="table table-bordered table-striped">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -40,23 +39,25 @@
                             <td>{{$comment->id}}</td>
                             <td>{{$comment->text}}</td>
                             <td>
+                                <div class="btn-group-sm">
                                 @if($comment->status == 1)
-                                    <a href="/admin/comments/toggle/{{$comment->id}}" class="fa fa-thumbs-o-up"></a>
+                                        <a href="/admin/comments/toggle/{{$comment->id}}" class="btn btn-default">
+                                            <i class="fa fa-thumbs-o-up"></i></a>
                                 @else
-                                    <a href="/admin/comments/toggle/{{$comment->id}}" class="fa fa-lock"></a>
+                                        <a href="/admin/comments/toggle/{{$comment->id}}" class="btn btn-default">
+                                            <i class="fa fa-lock"></i></a>
                                 @endif
                                     {{Form::open(['route'=>['comments.destroy', $comment->id], 'method'=>'delete'])}}
-                                    <div class="btn-group btn-group-sm">
-                                        </a>
                                         <button onclick="return confirm('Вы уверены?')" type="submit" class="btn btn-danger">
                                             <i class="fa fa-remove"></i>
                                         </button>
-                                    </div>
+                                </div>
                                     {{Form::close()}}
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    @endif
                 </div>
                 <!-- /.box-body -->
             </div>

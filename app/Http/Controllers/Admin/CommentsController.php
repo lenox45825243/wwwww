@@ -8,9 +8,14 @@ use App\Http\Controllers\Controller;
 
 class CommentsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $comments = Comment::paginate(20);
+        $comSearch = $request->get('search');
+        $q = Comment::query();
+        if ($comSearch !== null) {
+            $q->where('text', 'like', "%{$comSearch}%");
+        }
+        $comments = $q->get();
         return view('admin.comments.index', ['comments' => $comments]);
     }
 

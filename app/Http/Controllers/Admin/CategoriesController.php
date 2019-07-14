@@ -14,12 +14,12 @@ class CategoriesController extends Controller
 
         $catSearch = $request->get('search');
         $q = Category::query();
-        if ($catSearch === !null) {
-            $q = $q->where('title', 'like', "%{$catSearch}%");
+        if ($catSearch !== null) {
+            $q->where('title', 'like', "%{$catSearch}%");
         }
         $categories = $q->get();
 
-        return view('admin.categories.index', compact( 'categories'));
+        return view('admin.categories.index', ['categories'=>$categories]);
     }
 
     public function create()

@@ -9,9 +9,14 @@ use App\Http\Controllers\Controller;
 class TagsController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $tags = Tag::all();
+        $tagSearch = $request->get('search');
+        $q = Tag::query();
+        if ($tagSearch !== null) {
+            $q->where('title', 'like', "%{$tagSearch}%");
+        }
+        $tags = $q->get();
         return view('admin.tags.index', ['tags'=>$tags]);
     }
 
