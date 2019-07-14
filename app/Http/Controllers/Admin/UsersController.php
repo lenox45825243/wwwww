@@ -24,7 +24,6 @@ class UsersController extends Controller
 
     public function store(\App\Http\Requests\UserStore $request)
     {
-//        dd($request->all());
         $user = $request->validated();
         $user = User::add($request->all());
         $user->generatePassword($request->get('password'));

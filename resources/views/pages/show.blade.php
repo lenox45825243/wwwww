@@ -29,6 +29,9 @@
                             </div>
 
                             <div class="social-share">
+                                @if ($post->author == null)
+                                    <h1>Нет автора</h1>
+                                @else
 							<span
                                     class="social-share-title pull-left text-capitalize">{{$post->author->name}} On {{$post->getDate()}}</span>
                                 <ul class="text-center pull-right">
@@ -38,6 +41,7 @@
                                     <li><a class="s-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a class="s-instagram" href="#"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
+                                @endif
                             </div>
                         </div>
                     </article>
