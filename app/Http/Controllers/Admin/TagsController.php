@@ -16,7 +16,7 @@ class TagsController extends Controller
         if ($tagSearch !== null) {
             $q->where('title', 'like', "%{$tagSearch}%");
         }
-        $tags = $q->get();
+        $tags = $q->paginate(20);
         return view('admin.tags.index', ['tags'=>$tags]);
     }
 

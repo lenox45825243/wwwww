@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
-use App\Post;
+use Auth;
 use App\Tag;
+use App\Post;
+use App\Category;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
 
 class PostsController extends Controller
 {
@@ -25,7 +28,7 @@ class PostsController extends Controller
         if ($catSearch) {
             $q = $q->where('category_id', $catSearch);
         }
-        $posts = $q->get();
+        $posts = $q->paginate(10);
         return view('admin.posts.index', compact('categories','posts'));
     }
 

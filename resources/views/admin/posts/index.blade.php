@@ -87,6 +87,7 @@
                     </table>
                     @endif
                 </div>
+            {{$posts->links()}}
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

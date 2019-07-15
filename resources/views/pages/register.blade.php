@@ -17,7 +17,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" id="name" name="name"
-                                           placeholder="Name" value="{{old('name')}}">
+                                           placeholder="Имя" value="{{old('name')}}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <input type="password" class="form-control" id="password" name="password"
-                                           placeholder="password">
+                                           placeholder="Пароль">
                                 </div>
                             </div>
                             <button type="submit" class="btn send-btn">Register</button>

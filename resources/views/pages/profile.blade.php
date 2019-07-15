@@ -21,8 +21,8 @@
                             {{csrf_field()}}
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" id="name" name="name"
-                                           placeholder="Name" value="{{$user->name}}">
+                                    <input type="text" class="form-control" id="name" name="Имя"
+                                           placeholder="Имя" value="{{$user->name}}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <input type="password" class="form-control" id="password" name="password"
-                                           placeholder="password">
+                                           placeholder="Пароль">
                                 </div>
                             </div>
 

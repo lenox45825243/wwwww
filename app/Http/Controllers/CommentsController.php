@@ -10,7 +10,6 @@ class CommentsController extends Controller
 {
     public function store(\App\Http\Requests\Comment $request)
     {
-        // todo если комента нет вывести сообщение
         $comment = $request->validated();
         $comment = new Comment;
         $comment->text = $request->get('message');

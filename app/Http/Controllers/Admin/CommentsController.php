@@ -15,7 +15,7 @@ class CommentsController extends Controller
         if ($comSearch !== null) {
             $q->where('text', 'like', "%{$comSearch}%");
         }
-        $comments = $q->get();
+        $comments = $q->paginate(10);
         return view('admin.comments.index', ['comments' => $comments]);
     }
 

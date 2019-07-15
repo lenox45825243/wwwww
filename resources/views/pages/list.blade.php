@@ -19,7 +19,6 @@
                                 </div>
                                 <div class="post-content">
                                     <header class="entry-header text-center text-uppercase">
-{{--          TODO partials повторяющийся код                            --}}
                                         @if($post->hasCategory())
                                             <h6><a href="{{route('category.show', $post->category->slug)}}">{{$post->category->title}}</a></h6>
                                         @else

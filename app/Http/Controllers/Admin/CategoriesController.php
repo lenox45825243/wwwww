@@ -17,7 +17,7 @@ class CategoriesController extends Controller
         if ($catSearch !== null) {
             $q->where('title', 'like', "%{$catSearch}%");
         }
-        $categories = $q->get();
+        $categories = $q->paginate(20);
 
         return view('admin.categories.index', ['categories'=>$categories]);
     }

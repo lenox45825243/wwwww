@@ -30,6 +30,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Текст</th>
+                            <th>Название поста</th>
                             <th>Действия</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                         <tr>
                             <td>{{$comment->id}}</td>
                             <td>{{$comment->text}}</td>
+                            <td>Post name</td>
                             <td>
                                 <div class="btn-group-sm">
                                 @if($comment->status == 1)
