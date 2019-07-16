@@ -103,7 +103,7 @@ class User extends Authenticatable
         }
     }
 
-    public function getAvatar()
+    public static function getAvatar()
     {
         if($this->avatar == null)
         {

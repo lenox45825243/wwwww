@@ -19,6 +19,7 @@ class HomeController extends Controller
 
     public function show($slug)
     {
+
         $posts = Post::where('slug', $slug)->firstOrFail();
         return view('pages.show', ['post' => $posts,]);
     }

@@ -25,13 +25,20 @@ class UserUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => [
+                'required',
+                Rule::unique('users')->ignore($this->route('user')),
+            ],
             'email' => [
                 'required',
                 'email',
                 Rule::unique('users')->ignore($this->route('user')),
             ],
-            'avatar' => 'nullable|image'
+            'password' => [
+                'min:6',
+                Rule::unique('users')->ignore($this->route('user'))
+                ],
+            'avatar' => 'nullable|image',
         ];
     }
 }

@@ -18,7 +18,7 @@ class Post extends Model
 
     protected $fillable = [
         'title', 'content', 'date', 'description', 'category_id',
-        'is_featured', 'date', 'status',
+        'is_featured', 'date', 'status', 'user_id',
         ];
 
     public function category()
@@ -100,7 +100,7 @@ class Post extends Model
     {
         if($this->image == null)
         {
-            return '/img/photo1.png';
+            return '/img/no-image.png';
         }
 
         return '/uploads/' . $this->image;
@@ -199,7 +199,7 @@ class Post extends Model
 
     public function getDate()
     {
-        return Carbon::createFromFormat('d/m/y', $this->date)->format('F d, Y');
+        return Carbon::createFromFormat('d/m/y', $this->date)->format('d F, Y');
     }
 
     public function hasPrevious()
@@ -231,7 +231,7 @@ class Post extends Model
 
     public function hasCategory()
     {
-        return $this->category != null ? true : false;
+        return $this->category !== null ? true : false;
     }
 
     public static function getPopularPosts()

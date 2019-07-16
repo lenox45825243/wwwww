@@ -10,7 +10,7 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Добавить пользователя</h3>
-{{--                    @include('admin.errors')--}}
+                    @include('admin.errors')
                 </div>
                 <div class="box-body">
                     <div class="col-md-6">
@@ -34,7 +34,7 @@
                             <label for="exampleInputFile">Аватар</label>
                             <input type="file" name="avatar" id="exampleInputFile">
 
-                            <p class="help-block">Формат .jpg и .png</p>
+                            <p class="help-block">Формат картинки .jpg и .png</p>
                         </div>
                     </div>
                 </div>

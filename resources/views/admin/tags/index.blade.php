@@ -62,6 +62,7 @@
                     </table>
                     @endif
                 </div>
+            {{$tags->links()}}
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

@@ -39,7 +39,11 @@
                         <tr>
                             <td>{{$comment->id}}</td>
                             <td>{{$comment->text}}</td>
-                            <td>Post name</td>
+                            <td>@if ($comment->post)
+                                <h3>Нет IIocta</h3>
+                            @else
+                            {{$comment->post->title}}</td>
+                            @endif
                             <td>
                                 <div class="btn-group-sm">
                                 @if($comment->status == 1)
@@ -61,6 +65,7 @@
                     </table>
                     @endif
                 </div>
+            {{$comments->links()}}
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

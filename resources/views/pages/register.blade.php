@@ -32,6 +32,12 @@
                                            placeholder="Пароль">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="password" class="form-control" id="password" name="password_confirmation"
+                                           placeholder="Подтверждение пароля">
+                                </div>
+                            </div>
                             <button type="submit" class="btn send-btn">Register</button>
 
                         </form>

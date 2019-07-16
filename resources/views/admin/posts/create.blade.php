@@ -24,7 +24,7 @@
                             <label for="exampleInputFile">Лицевая картинка</label>
                             <input type="file" id="exampleInputFile" name="image">
 
-                            <p class="help-block">Какое-нибудь уведомление о форматах..</p>
+                            <p class="help-block">Формат картинки .jpg и .png</p>
                         </div>
                         <div class="form-group">
                             <label>Категория</label>
@@ -75,7 +75,7 @@
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" class="minimal" name="status">
+                                <input type="checkbox" class="minimal" name="status" value="1">
                             </label>
                             <label>
                                 Черновик

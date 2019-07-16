@@ -63,6 +63,7 @@
                     </table>
                     @endif
                 </div>
+            {{$categories->links()}}
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

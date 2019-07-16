@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-8">
 
-                    <div class="leave-comment mr0"><!--leave comment-->
+                    <div class="leave-comment"><!--leave comment-->
                         @if(session('status'))
                             <div class="alert alert-success">
                                 {{session('status')}}
@@ -44,7 +44,6 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn send-btn">Update</button>
-
                         </form>
                     </div><!--end leave comment-->
                 </div>

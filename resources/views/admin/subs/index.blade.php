@@ -54,6 +54,7 @@
                         @endforeach
                     </table>
                 </div>
+            {{$subs->links()}}
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

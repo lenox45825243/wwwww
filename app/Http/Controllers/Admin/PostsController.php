@@ -48,6 +48,9 @@ class PostsController extends Controller
         $post->setTags($request->get('tags'));
         $post->toggleStatus($request->get('status'));
         $post->toggleFeature($request->get('is_featured'));
+        $post->user_id = Auth::user()->id;
+        $post->save();
+
         return redirect()->route('posts.index');
     }
 

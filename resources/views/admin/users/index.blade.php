@@ -56,6 +56,7 @@
                     </table>
                     @endif
                 </div>
+            {{$users->links()}}
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->
