@@ -31,7 +31,7 @@
                                     <h1>Нет автора</h1>
                                 @else
 							<span
-                                    class="social-share-title pull-left text-capitalize">{{$post->author->name}} On {{$post->getDate()}}</span>
+                                    class="social-share-title pull-left text-capitalize">Выложил {{$post->author->name}} {{$post->getDate()}}</span>
                                 <ul class="text-center pull-right">
                                     <li><a class="s-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a class="s-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -45,7 +45,7 @@
                     </article>
                     <div class="top-comment"><!--top comment-->
                         <img src="/images/comment.jpg" class="pull-left img-circle" alt="">
-                        <h4>Rubel Miah</h4>
+                        <h4>{{$post->author->name}}</h4>
 
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor
                             invidunt ut labore et dolore magna aliquyam erat.</p>

@@ -44,18 +44,18 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav text-uppercase">
-                    <li><a href="/">Homepage</a></li>
-                    <li><a href="about-me.html">ABOUT ME </a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="/">Домашняя страница</a></li>
+                    <li><a href="about-me.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav text-uppercase pull-right">
                     @if(Auth::check())
-                        <li><a href="/profile">My profile</a></li>
-                        <li><a href="/logout">Logout</a></li>
+                        <li><a href="/profile">Мой профиль</a></li>
+                        <li><a href="/logout">Выйти</a></li>
                     @else
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Регистрация</a></li>
+                    <li><a href="/login">Войти</a></li>
                     @endif
                 </ul>
 

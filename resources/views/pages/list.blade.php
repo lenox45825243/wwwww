@@ -6,6 +6,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
+                    @if(!count($posts))
+                        <div class="box-body text-center"><h2>Не добавлено ни одного поста</h2></div>
+                        <div class="box-footer text-center"><h1>:-(</h1></div>
+                    @else
                     <div class="row">
                         @foreach($posts as $post)
                         <div class="col-md-6">
@@ -25,13 +29,11 @@
                                         <p class="text-primary">Нет категории</p>
                                         @endif
                                         <h1 class="entry-title"><a href="{{route('post.show', $post->slug)}}">{{$post->title}}</a></h1>
-
-
                                     </header>
                                     <div class="entry-content">
                                         {!! $post->description !!}
                                         <div class="social-share">
-                                            <span class="social-share-title pull-left text-capitalize">By Rubel On {{$post->getDate()}}</span>
+                                            <span class="social-share-title pull-left text-capitalize">Выложил {{$post->author->name}} {{$post->getDate()}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -40,6 +42,7 @@
                         </div>
                         @endforeach
                     </div>
+                    @endif
                     {{$posts->links()}}
                 </div>
                 @include('pages._sidebar')
