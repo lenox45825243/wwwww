@@ -44,7 +44,7 @@
                         </div>
                     </article>
                     <div class="top-comment"><!--top comment-->
-                        <img src="/images/comment.jpg" class="pull-left img-circle" alt="">
+                        <img src="" class="pull-left img-circle" alt="">
                         <h4>{{$post->author->name}}</h4>
 
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor
@@ -101,13 +101,13 @@
                             </div>
                             @endforeach
                         </div>
-                    </div><!--related post carousel-->
+                    </div>
                     @if(!$post->comments->isEmpty())
                     @foreach($post->getComments() as $comment)
-                    <div class="bottom-comment"><!--bottom comment-->
-
+                    <div class="bottom-comment">
+                        drtjdsrtjsr jsrt j
                         <div class="comment-img">
-                            <img class="img-circle" src="{{$comment->author->getAvatar()}}" alt="" width="105" height="75">
+                            <img class="img-circle" src="{{$comment->author->getAvatar()}}" alt="" width="150" height="75">
                         </div>
 
                         <div class="comment-text">
@@ -127,19 +127,20 @@
 
                     @if(Auth::check())
                     <div class="leave-comment"><!--leave comment-->
-                        <h4>Leave a reply</h4>
+                        <h4>Оставить комментрий</h4>
 
 
                         <form class="form-horizontal contact-form" role="form" method="post" action="/comment">
                             {{csrf_field()}}
                             <input type="hidden" name="post_id" value="{{$post->id}}">
+                            <input type="hidden" name="user_id" value="{{$post->user_id}}">
                             <div class="form-group">
                                 <div class="col-md-12">
 										<textarea class="form-control" rows="6" name="message"
-                                                  placeholder="Write Massage"></textarea>
+                                                  placeholder="Написать"></textarea>
                                 </div>
                             </div>
-                            <button class="btn send-btn">Post Comment</button>
+                            <button class="btn send-btn">Комментировать</button>
                         </form>
                     </div><!--end leave comment-->
                     @endif

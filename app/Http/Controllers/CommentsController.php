@@ -14,7 +14,8 @@ class CommentsController extends Controller
         $comment = new Comment;
         $comment->text = $request->get('message');
         $comment->post_id = $request->get('post_id');
+        $comment->user_id = $request->get('user_id');
         $comment->save();
-        return redirect()->back()->with('status', 'Ваш комментарий будет скоро добавлен!');
+        return redirect()->back()->with('status', 'Ваш комментарий добавлен!');
     }
 }

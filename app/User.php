@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class User extends Authenticatable
 {
 
+
     use Notifiable;
 
     const IS_ADMIN = 1;
@@ -106,7 +107,7 @@ class User extends Authenticatable
 
     public function getAvatar()
     {
-        if($this->avatar == null)
+        if($this->avatar)
         {
             return '/img/no-image.png';
         }

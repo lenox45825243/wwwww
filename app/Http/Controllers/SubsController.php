@@ -12,7 +12,7 @@ class SubsController extends Controller
     public function subscribe(\App\Http\Requests\Sub $request)
     {
         $request->validated();
-        $subs = Subscription::add($request->get('email'));
+        $subs = Subscription::add($request->get('email_subs'));
         $subs->generateToken();
         Mail::to($subs)->send(new SubscribeEmail($subs));
         return redirect()->back()->with('status','Проверьте вашу почту!');

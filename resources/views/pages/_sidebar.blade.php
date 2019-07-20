@@ -3,11 +3,11 @@
 
         <aside class="widget news-letter">
             <h3 class="widget-title text-uppercase text-center">Подписаться на рассылку</h3>
-            @include('admin.errors')
+            @include('admin.errors_subs')
 
             <form action="/subscribe" method="post">
                 {{csrf_field()}}
-                <input type="text" placeholder="Ваш Email" name="email" class="form-control">
+                <input type="text" placeholder="Ваш Email" name="email_subs" class="form-control">
                 <input type="submit" value="Подписаться"
                        class="text-uppercase text-center btn btn-subscribe">
             </form>

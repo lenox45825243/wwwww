@@ -153,6 +153,7 @@ return [
         'date' => '"Дату"',
         'unique' => '"Email"',
         'avatar' => '"Аватар"',
+        'email_subs' => '"Email"',
     ],
 
 ];

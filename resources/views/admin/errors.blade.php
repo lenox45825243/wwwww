@@ -1,4 +1,4 @@
-@if ($errors->any())
+@if ($errors->get('email', 'password'))
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-12">

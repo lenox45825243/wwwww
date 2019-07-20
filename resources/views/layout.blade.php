@@ -45,8 +45,6 @@
 
                 <ul class="nav navbar-nav text-uppercase">
                     <li><a href="/">Домашняя страница</a></li>
-                    <li><a href="about-me.html">О нас</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav text-uppercase pull-right">
