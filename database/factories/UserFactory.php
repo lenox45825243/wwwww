@@ -1,6 +1,9 @@
 <?php
 
 use App\User;
+use App\Post;
+use App\Category;
+use App\Tag;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -30,11 +33,11 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'content' => $faker->sentence,
         'image' => 'blog-1.jpg',
-        'date' => '01/01/19',
+        'date' => '01/07/19',
         'views' => $faker->numberBetween(0, 5000),
-        'category_id' => 1,
-        'user_id' => 1,
-        'status' => 1,
+        'category_id' => 20,
+        'user_id' => 12,
+        'status' => 0,
         'is_featured' => 0
     ];
 });

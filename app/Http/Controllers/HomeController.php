@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('author')->where('status', Post::IS_PUBLIC)->paginate(2);
+        $posts = Post::with('author')->where('status', 0)->paginate(3);
         return view('pages.index', ['posts' => $posts,]);
     }
 

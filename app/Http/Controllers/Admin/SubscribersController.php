@@ -37,7 +37,7 @@ class SubscribersController extends Controller
      */
     public function store(\App\Http\Requests\SubStore $request)
     {
-        $sub = $request->validated();
+        $request->validated();
         Subscription::add($request->get('email'));
         return redirect()->route('subscribers.index');
     }

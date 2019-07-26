@@ -8,13 +8,8 @@
                 <div class="col-md-8">
 
                     <div class="leave-comment"><!--leave comment-->
-                        @if(session('status'))
-                            <div class="alert alert-success">
-                                {{session('status')}}
-                            </div>
-                        @endif
-                        <h3 class="text-uppercase">My profile</h3>
-                        @include('admin.errors')
+                        <h3 class="text-uppercase">Мой профиль</h3>
+                        @include('admin.errors_users')
                         <br>
                         <img src="{{$user->getAvatar()}}" alt="" class="profile-image">
                         <form class="form-horizontal contact-form" role="form" method="post" action="/profile" enctype="multipart/form-data">
@@ -39,11 +34,10 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <input type="file" class="form-control" id="image" name="avatar">
-                                </div>
+                                <input type="file" name="avatar" id="exampleInputFile">
+                                <p class="help-block">Формат картинки .jpg и .png</p>
                             </div>
-                            <button type="submit" class="btn send-btn">Update</button>
+                            <button type="submit" class="btn send-btn">Обновить</button>
                         </form>
                     </div><!--end leave comment-->
                 </div>

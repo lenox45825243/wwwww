@@ -9,7 +9,7 @@
 
                     <div class="leave-comment mr0"><!--leave comment-->
 
-                        <h3 class="text-uppercase">Register</h3>
+                        <h3 class="text-uppercase">Зарегистрироваться</h3>
                         @include('admin.errors')
                         <br>
                         <form class="form-horizontal contact-form" role="form" method="post" action="/register">
@@ -34,11 +34,10 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <input type="password" class="form-control" id="password" name="password_confirmation"
-                                           placeholder="Подтверждение пароля">
+                                    <input type="password" name="password_confirmation" class="form-control" id="exampleInputEmail1" placeholder="Подтверждение пароля">
                                 </div>
                             </div>
-                            <button type="submit" class="btn send-btn">Register</button>
+                            <button type="submit" class="btn send-btn">Регистрация</button>
 
                         </form>
                     </div><!--end leave comment-->

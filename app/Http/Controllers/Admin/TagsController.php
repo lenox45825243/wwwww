@@ -43,7 +43,7 @@ class TagsController extends Controller
 
     public function update(\App\Http\Requests\Tag $request, $id)
     {
-        $tag = $request->validated();
+        $request->validated();
         $tag = Tag::find($id);
         $tag->update($request->all());
         return redirect()->route('tags.index');

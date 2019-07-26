@@ -27,7 +27,7 @@ class UserStore extends FormRequest
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:6',
-            'avatar' => 'nullable|image'
+            'avatar' => 'nullable|image',
         ];
     }
 }

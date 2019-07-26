@@ -7,13 +7,8 @@
             <div class="row">
                 <div class="col-md-8">
 
-                    <div class="leave-comment mr0"><!--leave comment-->
-                        @if(session('status'))
-                            <div class="alert alert-danger">
-                            {{session('status')}}
-                            </div>
-                        @endif
-                        <h3 class="text-uppercase">Login</h3>
+                    <div class="leave-comment mr0">
+                        <h3 class="text-uppercase">Войти</h3>
                         @include('admin.errors')
                         <br>
                         <form class="form-horizontal contact-form" role="form" method="post" action="/login">
@@ -30,7 +25,7 @@
                                            placeholder="Пароль">
                                 </div>
                             </div>
-                            <button type="submit" class="btn send-btn">Login</button>
+                            <button type="submit" class="btn send-btn">Войти</button>
 
                         </form>
                     </div><!--end leave comment-->

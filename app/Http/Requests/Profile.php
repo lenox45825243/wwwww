@@ -26,13 +26,12 @@ class Profile extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
             'email' => [
                 'required',
                 'email',
                 Rule::unique('users')->ignore(Auth::user()->id),
             ],
-            'avatar' => 'nullable|image'
+            'avatar' => 'nullable|image',
         ];
     }
 }

@@ -41,7 +41,7 @@ class PostsController extends Controller
 
     public function store(\App\Http\Requests\Post $request)
     {
-        $post = $request->validated();
+        $request->validated();
         $post = Post::add($request->all());
         $post->uploadImage($request->file('image'));
         $post->setCategory($request->get('category_id'));
@@ -66,7 +66,7 @@ class PostsController extends Controller
 
     public function update(\App\Http\Requests\Post $request, $id)
     {
-        $date = $request->validated();
+        $request->validated();
         $post = Post::find($id);
         $data = $request->all();
         $data['is_featured'] = $request->get('is_featured', 0);

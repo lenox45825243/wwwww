@@ -29,6 +29,11 @@
                     <div class="form-group">
                         <a href="{{route('subscribers.create')}}" class="btn btn-success">Добавить</a>
                     </div>
+                    @if(!count($subs))
+                        <div class="col-md-12">
+                            <h5 class="text-center">Данных по запросу не найдено</h5>
+                        </div>
+                    @else
                     <table id="example2" class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -53,6 +58,7 @@
                         </tr>
                         @endforeach
                     </table>
+                    @endif
                 </div>
             {{$subs->links()}}
                 <!-- /.box-body -->

@@ -29,7 +29,7 @@ class CategoriesController extends Controller
 
     public function store(\App\Http\Requests\Category $request)
     {
-        $category = $request->validated();
+        $request->validated();
         Category::create($request->all());
         return redirect()->route('categories.index');
     }
@@ -43,7 +43,7 @@ class CategoriesController extends Controller
 
     public function update(\App\Http\Requests\Category $request, $id)
     {
-        $category = $request->validated();
+        $request->validated();
         $category = Category::find($id);
         $category->update($request->all());
         return redirect()->route('categories.index');

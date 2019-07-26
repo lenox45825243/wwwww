@@ -43,12 +43,9 @@
                             </div>
                         </div>
                     </article>
-                    <div class="top-comment"><!--top comment-->
-                        <img src="" class="pull-left img-circle" alt="">
-                        <h4>{{$post->author->name}}</h4>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor
-                            invidunt ut labore et dolore magna aliquyam erat.</p>
+                    <div class="comment-img col-md-12"><!--top comment-->
+                        <img src="{{$post->author->getAvatar()}}" class="pull-left img-circle" alt="" width="70" height="70">
+                        <h4>Новость от пользователя {{$post->author->name}}</h4>
                     </div><!--top comment end-->
                     <div class="row"><!--blog next previous-->
                         <div class="col-md-6">
@@ -89,7 +86,7 @@
                     </div><!--blog next previous end-->
                     <div class="related-post-carousel"><!--related post carousel-->
                         <div class="related-heading">
-                            <h4>You might also like</h4>
+                            <h4>Вам также может понравиться</h4>
                         </div>
                         <div class="items">
                             @foreach($post->related() as $item)
@@ -105,9 +102,8 @@
                     @if(!$post->comments->isEmpty())
                     @foreach($post->getComments() as $comment)
                     <div class="bottom-comment">
-                        drtjdsrtjsr jsrt j
                         <div class="comment-img">
-                            <img class="img-circle" src="{{$comment->author->getAvatar()}}" alt="" width="150" height="75">
+                            <img class="img-circle" src="{{$comment->author->getAvatar()}}" alt="" width="70" height="70">
                         </div>
 
                         <div class="comment-text">

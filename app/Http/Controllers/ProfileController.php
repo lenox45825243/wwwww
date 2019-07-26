@@ -17,7 +17,7 @@ class ProfileController extends Controller
 
     public function store(\App\Http\Requests\Profile $request)
     {
-        $user = $request->validated();
+        $request->validated();
         $user = Auth::user();
         $user->edit($request->all());
         $user->generatePassword($request->get('password'));

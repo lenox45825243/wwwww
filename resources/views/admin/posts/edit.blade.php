@@ -28,7 +28,7 @@
                             <label for="exampleInputFile">Лицевая картинка</label>
                             <input type="file" id="exampleInputFile" name="image">
 
-                            <p class="help-block">Какое-нибудь уведомление о форматах..</p>
+                            <p class="help-block">Формат картинки .jpg и .png</p>
                         </div>
                         <div class="form-group">
                             <label>Категория</label>

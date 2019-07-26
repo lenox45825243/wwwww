@@ -15,7 +15,7 @@ class AuthController extends Controller
 
     public function register(\App\Http\Requests\AuthRegister $request)
     {
-        $user = $request->validated();
+        $request->validated();
         $user = User::add($request->all());
         $user->generatePassword($request->get('password'));
         return redirect('/login');
@@ -28,7 +28,7 @@ class AuthController extends Controller
 
     public function login(\App\Http\Requests\AuthLogin $request)
     {
-        $user = $request->validated();
+        $request->validated();
         if(Auth::attempt([
             'email' => $request->get('email'),
             'password' => $request->get('password')

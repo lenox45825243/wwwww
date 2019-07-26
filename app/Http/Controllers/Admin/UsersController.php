@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,7 +25,7 @@ class UsersController extends Controller
 
     public function store(\App\Http\Requests\UserStore $request)
     {
-        $user = $request->validated();
+        $request->validated();
         $user = User::add($request->all());
         $user->generatePassword($request->get('password'));
         $user->uploadAvatar($request->file('avatar'));
@@ -39,7 +40,7 @@ class UsersController extends Controller
 
     public function update($id, \App\Http\Requests\UserUpdate $request)
     {
-        $user = $request->validated();
+        $request->validated();
         $user = User::find($id);
         $user->edit($request->all());
         $user->generatePassword($request->get('password'));
