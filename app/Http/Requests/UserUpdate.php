@@ -27,14 +27,17 @@ class UserUpdate extends FormRequest
      */
     public function rules()
     {
+
+        $user = User::where('email', $this->get('email'))->first();
         return [
             'name' => 'required',
             'email' => [
                 'required',
                 'email',
-                Rule::unique('users')->ignore(Auth::user()->id)
+                Rule::unique('users')->ignore($user->id)
             ],
             'avatar' => 'nullable|image',
+            'password' => 'nullable|min:6',
         ];
     }
 }

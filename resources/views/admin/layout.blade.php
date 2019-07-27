@@ -271,8 +271,6 @@
 </div>
 
 <script src="/js/admin.js"></script>
-
-{{--        todo скрипт внизу не подключается из resource/assets/admin/dist/js/script js--}}
 <script>
     $(document).ready(function (){
         $("#example1").DataTable();

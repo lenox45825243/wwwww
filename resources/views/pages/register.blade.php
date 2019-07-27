@@ -10,7 +10,7 @@
                     <div class="leave-comment mr0"><!--leave comment-->
 
                         <h3 class="text-uppercase">Зарегистрироваться</h3>
-                        @include('admin.errors')
+                        @include('admin.errors_users')
                         <br>
                         <form class="form-horizontal contact-form" role="form" method="post" action="/register">
                             {{csrf_field()}}

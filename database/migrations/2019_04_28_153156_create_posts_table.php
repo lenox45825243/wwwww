@@ -30,7 +30,8 @@ class CreatePostsTable extends Migration
                 ->on('categories');
             $table->foreign('user_id', 'fk_posts_user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
