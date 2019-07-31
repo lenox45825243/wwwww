@@ -185,6 +185,13 @@ class Post extends Model
                 : 'Нет категории';
     }
 
+    public function getStatusTitle()
+    {
+        return ($this->status === 0)
+            ? 'Опубликован'
+            : 'Не опубликован';
+    }
+
     public function getTagsTitles()
     {
         return (!$this->tags->isEmpty())

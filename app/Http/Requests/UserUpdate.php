@@ -30,14 +30,14 @@ class UserUpdate extends FormRequest
 
         $user = User::where('email', $this->get('email'))->first();
         return [
-            'name' => 'required',
+            'name' => 'required|min:5|max:255',
             'email' => [
                 'required',
                 'email',
                 Rule::unique('users')->ignore($user->id)
             ],
             'avatar' => 'nullable|image',
-            'password' => 'nullable|min:6',
+            'password' => 'nullable|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
         ];
     }
 }

@@ -11,7 +11,7 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Список постов</h3>
-                    @include('admin.errors')
+                    @include('pages.errors.errors_users_login')
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -51,6 +51,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Название</th>
+                            <th>Опубликован</th>
                             <th>Категория</th>
                             <th>Теги</th>
                             <th>Картинка</th>
@@ -61,8 +62,8 @@
                         @foreach($posts as $post)
                         <tr>
                             <td>{{$post->id}}</td>
-                            <td>{{$post->title}}
-                            </td>
+                            <td>{{$post->title}}</td>
+                            <td>{{$post->getStatusTitle()}}</td>
                             <td>{{$post->getCategoryTitle()}}</td>
                             <td>{{$post->getTagsTitles()}}</td>
                             <td>

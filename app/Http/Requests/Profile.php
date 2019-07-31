@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Auth;
+use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -25,13 +26,15 @@ class Profile extends FormRequest
      */
     public function rules()
     {
+        $user = User::where('email', $this->get('email'))->first();
         return [
             'email' => [
                 'required',
                 'email',
-                Rule::unique('users')->ignore(Auth::user()->id),
+                Rule::unique('users')->ignore($user->id)
             ],
             'avatar' => 'nullable|image',
+            'password' => 'nullable|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'
         ];
     }
 }

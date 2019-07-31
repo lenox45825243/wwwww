@@ -18,7 +18,7 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Меняем тег</h3>
-                    @include('admin.errors')
+                    @include('pages.errors.errors_users_login')
                 </div>
                 <div class="box-body">
                     {{Form::open(['route'=>['tags.update',$tag->id],'method'=>'put'])}}

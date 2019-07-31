@@ -24,7 +24,7 @@ class Sub extends FormRequest
     public function rules()
     {
         return [
-            'email_subs' => 'required|email|unique:subscriptions'
+            'email' => 'required|email|unique:subscriptions'
         ];
     }
 }

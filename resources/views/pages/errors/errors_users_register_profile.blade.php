@@ -1,6 +1,3 @@
-<?php
-// todo админские ошибки в админку пользоват в пользователя
-?>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

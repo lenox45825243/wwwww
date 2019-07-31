@@ -14,7 +14,7 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Измененить пользователя</h3>
-                    @include('admin.errors_users')
+                    @include('pages.errors.errors_users_register_profile')
                 </div>
                 <div class="box-body">
                     <div class="col-md-6">
@@ -31,8 +31,8 @@
                             <input type="password" class="form-control" id="exampleInputEmail1" placeholder="" name="password" >
                         </div>
                         <div class="form-group">
-                            <img src="{{$user->getAvatar()}}" alt="" width="200" class="img-responsive">
                             <label for="exampleInputFile">Аватар</label>
+                            <img src="{{$user->getAvatar()}}" alt="" width="200" class="img-responsive">
                             <input type="file" name="avatar" id="exampleInputFile">
                             <p class="help-block">Формат картинки .jpg и .png</p>
                         </div>

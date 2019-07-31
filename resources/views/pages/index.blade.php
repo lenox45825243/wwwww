@@ -16,20 +16,22 @@
                             <a href="{{route('post.show', $post->slug)}}"><img src="{{$post->getImage()}}" alt=""></a>
 
                             <a href="{{route('post.show', $post->slug)}}" class="post-thumb-overlay text-center">
-                                <div class="text-uppercase text-center">View Post</div>
+                                <div class="text-uppercase text-center">Читать</div>
                             </a>
                         </div>
                         <div class="post-content">
                             <header class="entry-header text-center text-uppercase">
                                 @if($post->hasCategory())
-                                <h6><a href="{{route('category.show', $post->category->slug)}}">{{$post->category ? $post->category->title : '-'}}</a></h6>
+                                    <h6><a href="{{route('category.show', $post->category->slug)}}">{{$post->category->title}}</a></h6>
+                                @else
+                                    <p class="text-primary text-lowercase">Нет категории</p>
                                 @endif
                                 <h1 class="entry-title"><a href="{{route('post.show', $post->slug)}}">{{$post->title}}</a></h1>
                             </header>
                             <div class="entry-content">
                                 {!!str_limit($post->description, 70)!!}
                                 <div class="btn-continue-reading text-center text-uppercase">
-                                    <a href="{{route('post.show', $post->slug)}}" class="more-link">Continue Reading</a>
+                                    <a href="{{route('post.show', $post->slug)}}" class="more-link">Просмотреть новость</a>
                                 </div>
                             </div>
                             <div class="social-share">

@@ -26,7 +26,7 @@ class AuthRegister extends FormRequest
         return [
             'name' => 'required|min:5|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|confirmed|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
         ];
     }
 }

@@ -9,7 +9,7 @@
 
                     <div class="leave-comment mr0">
                         <h3 class="text-uppercase">Войти</h3>
-                        @include('admin.errors')
+                        @include('pages.errors.errors_users_login')
                         <br>
                         <form class="form-horizontal contact-form" role="form" method="post" action="/login">
                             {{csrf_field()}}

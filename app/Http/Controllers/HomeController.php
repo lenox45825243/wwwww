@@ -34,7 +34,7 @@ class HomeController extends Controller
     public function category($slug)
     {
         $category = Category::where('slug', $slug)->firstOrFail();
-        $posts = $category->posts()->paginate(2);
+        $posts = Post::with('author')->where('status', 0)->where('category_id', !null)->paginate(3);
 
         return view('pages.list', compact('posts', 'category'));
     }

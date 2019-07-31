@@ -6,10 +6,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-
+                    @include('pages.errors.errors_users_register_profile')
                     <div class="leave-comment"><!--leave comment-->
                         <h3 class="text-uppercase">Мой профиль</h3>
-                        @include('admin.errors_users')
                         <br>
                         <img src="{{$user->getAvatar()}}" alt="" class="profile-image">
                         <form class="form-horizontal contact-form" role="form" method="post" action="/profile" enctype="multipart/form-data">
