@@ -15,8 +15,8 @@ class User extends Authenticatable
 
     const IS_ADMIN = 1;
     const IS_NORMAL = 0;
-    const IS_BANNED = 1;
-    const IS_ACTIVE = 0;
+    const IS_ACTIVE = 1;
+    const IS_BANNED = 0;
 
     /**
      * The attributes that are mass assignable.
@@ -148,9 +148,9 @@ class User extends Authenticatable
         $this->save();
     }
 
-    public function toggleBan($value)
+    public function toggleBan()
     {
-        if(!$value)
+        if($this->status === 0)
         {
             return $this->unban();
         }

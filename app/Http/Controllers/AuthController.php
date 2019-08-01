@@ -31,12 +31,13 @@ class AuthController extends Controller
         $request->validated();
         if(Auth::attempt([
             'email' => $request->get('email'),
-            'password' => $request->get('password')
+            'password' => $request->get('password'),
+            'status' => 0
         ]))
         {
             return redirect('/');
         }
-        return redirect()->back()->with('status', 'Неправильный логин или пароль');
+        return redirect()->back()->with('status', 'Неправильный логин или пароль, или вы забанены!');
     }
 
     public function logout()

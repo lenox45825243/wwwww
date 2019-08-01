@@ -44,6 +44,13 @@
                                     <a href="{{route('users.edit', $user->id)}}" class="btn btn-default ">
                                         <i class="fa fa-pencil"></i>
                                     </a>
+                                    @if($user->status === 1)
+                                        <a href="/admin/users/toggle/{{$user->id}}" class="btn btn-default">
+                                            <i class="fa fa-thumbs-o-up"></i></a>
+                                    @else
+                                        <a href="/admin/users/toggle/{{$user->id}}" class="btn btn-default">
+                                            <i class="fa fa-lock"></i></a>
+                                    @endif
                                     <button onclick="return confirm('Вы уверены?')" type="submit" class="btn btn-danger  delete">
                                         <i class="fa fa-remove"></i>
                                     </button>

@@ -32,6 +32,13 @@ class UsersController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function toggle($id)
+    {
+        $user = User::find($id);
+        $user->toggleBan();
+        return redirect()->back();
+    }
+
     public function edit($id)
     {
         $user = User::find($id);

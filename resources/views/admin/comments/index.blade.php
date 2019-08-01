@@ -47,7 +47,7 @@
                             <td>
                                 <div class="btn-group-sm">
                                     {{Form::open(['route'=>['comments.destroy', $comment->id], 'method'=>'delete'])}}
-                                @if($comment->status == 1)
+                                @if($comment->status === 1)
                                         <a href="/admin/comments/toggle/{{$comment->id}}" class="btn btn-default">
                                             <i class="fa fa-thumbs-o-up"></i></a>
                                 @else

@@ -33,7 +33,7 @@ class Comment extends Model
 
     public function toggleStatus()
     {
-        if($this->status == 0)
+        if($this->status === 0)
         {
             return $this->allow();
         }

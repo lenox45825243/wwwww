@@ -42,8 +42,8 @@ Route::group([
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/tags', 'TagsController');
     Route::resource('/users', 'UsersController');
+    Route::get('/users/toggle/{id}', 'UsersController@toggle');
     Route::resource('/posts', 'PostsController');
-    Route::get('/comments', 'CommentsController@index');
     Route::get('/comments', 'CommentsController@index');
     Route::get('/comments/toggle/{id}', 'CommentsController@toggle');
     Route::delete('/comments/{id}/destroy', 'CommentsController@destroy')->name('comments.destroy');
